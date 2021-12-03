@@ -1,0 +1,69 @@
+<MyTunning>
+    GridLayout:
+        canvas.before:
+            Color:
+                rgba: .1, .1, .1, 1
+            Rectangle:
+                pos: self.pos
+                size: self.size
+        cols:1
+        size: root.width -200, root.height -200
+        pos: 100, 100.
+
+        GridLayout:
+            cols:3
+            rows:2
+
+            TextInput:
+                id: max_bar
+                halign: 'center'
+                valign: "middle"
+                size_hint: (.2, None)
+                height: 30
+                multiline: False
+                hint_text: "Max"
+
+            TextInput:
+                id:min_bar
+                halign: 'center'
+                valign: "middle"
+                size_hint: (.2, None)
+                height: 30
+                multiline: False
+                hint_text: "Min"
+
+            TextInput:
+                id:percent
+                halign: 'center'
+                valign: "middle"
+                size_hint: (.2, None)
+                height: 30
+                multiline: False
+                hint_text: "Percent"
+        GridLayout:
+            cols:2
+            rows:1
+            Label:
+                id:front
+                halign: 'center'
+                valign: "middle"
+                size_hint: (.2, None)
+                height: 30
+                text: "Dianteira"
+            Label:
+                id:rear
+                halign: 'center'
+                valign: "middle"
+                size_hint: (.2, None)
+                height: 30
+                text: "Traseira"
+
+        GridLayout:
+            cols:2
+            rows:1
+            Button:
+                text:"Calc"
+                on_press: root.calc()
+            Button:
+                text:"Clear"
+                on_press: root.clear()
