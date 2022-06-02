@@ -1,3 +1,17 @@
+#:import utils kivy.utils
+
+<BackgroundColor@Widget>
+    background_color: 1, 1, 1, 1
+    canvas.before:
+        Color:
+            rgba: root.background_color
+        Rectangle:
+            size: self.size
+            pos: self.pos
+
+<BackgroundLabel@Label+BackgroundColor>
+    background_color: utils.get_color_from_hex('#0E2F44')
+
 <MyGrid>
 #define q iremos usar o widget MyGrid
 
@@ -38,6 +52,7 @@
             Label:
                 text: "car"
 
+
             Label:
                 id: mod_for
                 text: "0"
@@ -76,42 +91,43 @@
                 text:"+"
                 on_press: root.add("car")
 
-            TextInput:
+            BackgroundLabel:
                 id: for
                 halign: 'center'
                 valign: "middle"
                 font_size: self.size[0] * 0.7
                 text: "10"
                 multiline:False
-            TextInput:
+
+            BackgroundLabel:
                 id: des
                 halign: 'center'
                 valign: "middle"
                 font_size: self.size[0] * 0.7
                 text: "10"
                 multiline:False
-            TextInput:
+            BackgroundLabel:
                 id: con
                 halign: 'center'
                 valign: "middle"
                 font_size: self.size[0] * 0.7
                 text: "10"
                 multiline:False
-            TextInput:
+            BackgroundLabel:
                 id: int
                 halign: 'center'
                 valign: "middle"
                 font_size: self.size[0] * 0.7
                 text: "10"
                 multiline:False
-            TextInput:
+            BackgroundLabel:
                 id: sab
                 halign: 'center'
                 valign: "middle"
                 font_size: self.size[0] * 0.7
                 text: "10"
                 multiline:False
-            TextInput:
+            BackgroundLabel:
                 id: car
                 halign: 'center'
                 valign: "middle"
